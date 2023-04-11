@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 
@@ -13,6 +13,7 @@ import { routing } from './app.routing';
 //import { CursosService } from './cursos/cursos.service';
 import { AppRoutingModule } from './app-routing.module';
 import { CursosModule } from './cursos/cursos.module';
+import { AlunosModule } from './alunos/alunos/alunos.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CursosModule } from './cursos/cursos.module';
     AppRoutingModule,
     FormsModule,
     routing,
-    CursosModule
+    CursosModule,
+   AlunosModule,
   ],
   //providers: [CursosService],
   bootstrap: [AppComponent]
