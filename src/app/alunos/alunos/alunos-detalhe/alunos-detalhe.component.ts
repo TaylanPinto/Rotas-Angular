@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AlunosService } from './../alunos.service';
@@ -15,6 +15,7 @@ export class AlunosDetalheComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private  alunosService: AlunosService
   ) { }
 
@@ -27,6 +28,11 @@ export class AlunosDetalheComponent implements OnInit, OnDestroy {
       }
     );
   }
+
+    editarContato(){
+      this.router.navigate(['/alunos', this.aluno.id, 'editar']);
+    }
+
 ngOnDestroy(){
   this.inscricao.unsubscribe();
 }
