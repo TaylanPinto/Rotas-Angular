@@ -1,14 +1,14 @@
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AlunosService } from './../alunos.service';
 
 @Component({
   selector: 'app-alunos-detalhe',
   templateUrl: './alunos-detalhe.component.html',
   styleUrls: ['./alunos-detalhe.component.css']
 })
-export class AlunosDetalheComponent implements OnInit {
+export class AlunosDetalheComponent implements OnInit, OnDestroy {
 
   aluno: any;
   inscricao: Subscription;
@@ -23,7 +23,7 @@ export class AlunosDetalheComponent implements OnInit {
       (params: any)  => {
         let id = params ['id'];
 
-        this.aluno = this.alunosService.getAluno(id);
+       this.aluno = this.alunosService.getAluno(id);
       }
     );
   }
